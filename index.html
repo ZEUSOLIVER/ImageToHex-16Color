@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <a href="#about" class="logo">Zeus</a>
+        </div>
+    </header>
+    <main class="container"></main>
+        <section class="secao" id="imageresizer">
+            <h1>VGA palette</h1>
+        <div>
+            <svg id="palette" viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" version="1.0" width="512" height="512">
+           <rect id="pal0" width="32" height="32" y="0" x="0" style="fill:#000000;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal1" width="32" height="32" y="0" x="32" style="fill:#800000;                   stroke-width:0;  
+                stroke:black;"/>
+            <rect id="pal2" width="32" height="32" y="0" x="64" style="fill:#008000;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal3" width="32" height="32" y="0" x="96" style="fill:#808000;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal4" width="32" height="32" y="0" x="128" style="fill:#000080;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal5" width="32" height="32" y="0" x="160" style="fill:#800080;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal6" width="32" height="32" y="0" x="192" style="fill:#008080;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal7" width="32" height="32" y="0" x="224" style="fill:#c0c0c0;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal8" width="32" height="32" y="0" x="256" style="fill:#808080;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="pal9" width="32" height="32" y="0" x="288" style="fill:#ff0000;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="palA" width="32" height="32" y="0" x="320" style="fill:#00ff00;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="palB" width="32" height="32" y="0" x="352" style="fill:#ffff00;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="palC" width="32" height="32" y="0" x="384" style="fill:#0000ff;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="palD" width="32" height="32" y="0" x="416" style="fill:#ff00ff;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="palE" width="32" height="32" y="0" x="448" style="fill:#00ffff;                    stroke-width:0;                    stroke:black;"/>
+            <rect id="palF" width="32" height="32" y="0" x="480" style="fill:#ffffff;                    stroke-width:0;                    stroke:black;"/>
+        </svg> 
+            <br>
+            <input type="file" id="fileInput"></input>
+            <button id="resetpalette">Reset</button>
+            <a class="button">Faz o L</a>
+            <button class="button" id="ButtonStrange">StrangeButton</button>
+
+            <div class="range-container">
+                <label for="widthImage">Width:</label>
+                <input type="range" id="widthImage" min="1" max="320" value="32"></input>
+                <span id="widthValue">32</span>
+            </div>
+            <div class="range-container">
+                <label for="heightImage">Height:</label>
+                <input type="range" id="heightImage" min="1" max="320" value="32"></input>
+                <span id="heightValue">32</span>
+            </div>
+                <audio id="bgm" src="templeos.ogg" controls loop preload="metadata"></audio>
+                <img id="imageSrc" style="display: none;">
+            </div>
+            <div class="container">
+                <p>Original Image</p>
+                <canvas id="canvas"></canvas>
+                <p id="msdostext">Image in MSDOS</p>
+                <img id="CRTMonitor" src="crtmonitor.png">
+                <br>
+                <canvas id="canvas2"></canvas>
+                <textarea style="width:50%; height:300px" spellcheck="false" readonly name="CodeOutput" id="codeoutput">The generated image code is right here</textarea>
+            </div>
+        </section>
+            <section class="secao" id="about">
+                <div class="container">
+                    <h2>About me</h2>
+                    <h1>I try make a web page with new method to convert image format to sequence pixel in HEX</h1>   
+                    <h1>XD</h1>             
+                </div>
+            </section>
+        </main>
+    <script src="index.js"></script>
+    <script src="opencv.js"></script>
+</body>
+</html>
