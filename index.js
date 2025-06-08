@@ -264,13 +264,49 @@ function image_to_bin(image) {
     codeout = "";
     //codeout += `${widthImage.value}${heightImage.value}`
     if (strangebutton == true) {
-        codeout = "db";
-        for(let y = 0; y < image.rows; y++) {
+        let currenty = 0;
+        let imagerowt = image.rows/4+currenty
+        codeout += `image_data${0}:\ndcb`;
+        for(let y = currenty; y < imagerowt; y++) {
             for(let x = 0; x < image.cols; x++) {
                 pixel = image.ucharPtr(y, x);
                 closestColorIndex = findClosestColor(pixel, pcDosPalette);
                 recentColors = [];
                 codeout += `, $${closestColorIndex}`
+                currenty += 1;
+            }
+        }
+        codeout += `\nimage_data${1}:\ndcb`;
+        imagerowt = image.rows/4+currenty
+        for(let y = currenty; y < imagerowt; y++) {
+            for(let x = 0; x < image.cols; x++) {
+                pixel = image.ucharPtr(y, x);
+                closestColorIndex = findClosestColor(pixel, pcDosPalette);
+                recentColors = [];
+                codeout += `, $${closestColorIndex}`
+                currenty += 1;
+            }
+        }
+        imagerowt = image.rows/4+currenty
+        codeout += `\nimage_data${2}:\ndcb`;
+        for(let y = currenty; y < imagerowt; y++) {
+            for(let x = 0; x < image.cols; x++) {
+                pixel = image.ucharPtr(y, x);
+                closestColorIndex = findClosestColor(pixel, pcDosPalette);
+                recentColors = [];
+                codeout += `, $${closestColorIndex}`
+                currenty += 1;
+            }
+        }
+        imagerowt = image.rows/4+currenty
+        codeout += `\nimage_data${3}:\ndcb`;
+        for(let y = currenty; y < imagerowt; y++) {
+            for(let x = 0; x < image.cols; x++) {
+                pixel = image.ucharPtr(y, x);
+                closestColorIndex = findClosestColor(pixel, pcDosPalette);
+                recentColors = [];
+                codeout += `, $${closestColorIndex}`
+                currenty += 1;
             }
         }
     } else {
